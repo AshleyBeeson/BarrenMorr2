@@ -8,22 +8,25 @@ namespace Barrenmoor
         
         private List<Point> EventPoints = new List<Point>();
         private int maxSize;
+        private static readonly Random rand = new Random();
 
         public Grid(int maxSizeOfGrid, int maxAmtOfEvents)
         {
             this.maxSize = maxSizeOfGrid;
             for (int i = 0; i < maxAmtOfEvents; i++)
             {
-                EventPoints.Add(new Point(new Position(0, 0), EventType.Treasure));
                 EventPoints.Add(GenerateEvent());    
             }
-            
+            List<string> events = new List<string>();
+            foreach (var item in EventPoints)
+            {
+                events.Add(item.ToString());
+            }
+            System.IO.File.WriteAllLines("C:\\Users\\ashbe\\Desktop\\eventList.txt", events);
         }
 
         private Point GenerateEvent()
         {
-
-            Random rand = new Random();
             int x = rand.Next(maxSize);
             int y = rand.Next(maxSize);
             Position pos = new Position(x,y);
@@ -47,7 +50,6 @@ namespace Barrenmoor
 
             return new Point(pos, e);
         }
-
 
         public Point CheckPlayerPos(Position pos)
         {

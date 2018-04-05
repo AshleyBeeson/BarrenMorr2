@@ -37,5 +37,10 @@ namespace Barrenmoor
             Console.WriteLine(Move);
         }
 
+        internal static void NothingFoundText()
+        {
+            var Nothing = "There doesn't seem to be anything of interest";
+            Console.WriteLine(Nothing);
+        }
     }
 }

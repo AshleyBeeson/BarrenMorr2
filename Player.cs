@@ -9,7 +9,7 @@
         public void MovePlayer(string dir)
         {
             switch (dir.ToUpper())
-            {
+            {   
                 case "N":
                     pos.Y += 1;
                     break;
