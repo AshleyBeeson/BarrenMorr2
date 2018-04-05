@@ -14,25 +14,37 @@ namespace Barrenmoor
             MapClass map = new MapClass();
             Treasure treasure = new Treasure();
             treasure.RandomTreasurePosition();
-            bool treasureFound = false;
+            bool isDead = false;
 
-            while (treasureFound==false)
+            int points = 0;
+            bool treasurePointsMet = false; 
+
+
+            while ( (isDead==false) && (treasurePointsMet == false) )
             {
+ 
                 Console.WriteLine("Please input North, East, South or West");
                 string move = Console.ReadLine();
                 player.MovePosition(move);
                 double dist = map.TreasureDist(player.GetX(), player.GetY(), treasure.GetX(), treasure.GetY());
                 Console.WriteLine("You are " + dist + " away bro");
-                //Console.WriteLine(player.GetX());
-                //Console.WriteLine(player.GetY());
-                //Console.WriteLine(treasure.GetX());
-                //Console.WriteLine(treasure.GetY());
 
-                if (dist == 0)
+                if ( dist == 0)
+                {
+                    treasure.RandomTreasurePosition();
+                    treasure.DetermineTreasureLevel();
+                    points = points + treasure.GetTreasurePoints();
+                    Console.WriteLine("You have " + points + "points");
+                }
+
+                if (points >= 10) treasurePointsMet = true;
+
+                if (treasurePointsMet)
                 {
                     Console.WriteLine("Yh m8 you winz0");
-                    treasureFound = true;
-                } 
+                    //treasureFound = true;
+                    Console.ReadLine();
+                }
             }
         }
 
