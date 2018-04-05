@@ -12,7 +12,7 @@
         public string Name { get; }
         
         public Position pos { get; set; }
-        
+
         public int Health { get; set; }
     }
 }

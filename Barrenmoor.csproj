@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compass.cs" />
     <Compile Include="EventType.cs" />
     <Compile Include="FlavourText.cs" />
     <Compile Include="GameLoop.cs" />

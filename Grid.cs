@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace Barrenmoor
 {
@@ -6,27 +7,62 @@ namespace Barrenmoor
     {
         
         private List<Point> EventPoints = new List<Point>();
+        private int maxSize;
 
-        public Grid()
+        public Grid(int maxSizeOfGrid, int maxAmtOfEvents)
         {
-            for (int i = 0; i < 10; i++)
+            this.maxSize = maxSizeOfGrid;
+            for (int i = 0; i < maxAmtOfEvents; i++)
             {
-                EventPoints.Add(new Point(new Position(0,0), EventType.Treasure));    
+                EventPoints.Add(new Point(new Position(0, 0), EventType.Treasure));
+                EventPoints.Add(GenerateEvent());    
             }
             
         }
 
+        private Point GenerateEvent()
+        {
+
+            Random rand = new Random();
+            int x = rand.Next(maxSize);
+            int y = rand.Next(maxSize);
+            Position pos = new Position(x,y);
+            EventType e;
+        
+            switch (rand.Next(3))
+            {
+                default:
+                    e = EventType.Monster;
+                    break;
+                case 1:
+                    e = EventType.Monster;
+                    break;
+                case 2:
+                    e = EventType.Treasure;
+                    break;
+                case 3:
+                    e = EventType.Trap;
+                    break;
+            }
+
+            return new Point(pos, e);
+        }
+
+
         public Point CheckPlayerPos(Position pos)
         {
-            foreach (var point in EventPoints)
+            foreach (var Point in EventPoints)
             {
-                var PointPos = point.pos;
-                if (PointPos.X != pos.X)
+                var PointPos = Point.pos;
+                if (PointPos.X == pos.X)
                 {
-                    return null;
+                    if (PointPos.Y == pos.Y)
+                    {
+                        return Point;
+                    }
                 }
             }
-            
+            return null;
         }
         
     }
