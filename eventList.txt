@@ -1,0 +1,16 @@
+Event type: Monster, Event Position: -2,-1
+Event type: Treasure, Event Position: 24,5
+Event type: Monster, Event Position: -2,-12
+Event type: Monster, Event Position: -16,-28
+Event type: Treasure, Event Position: -23,-9
+Event type: Monster, Event Position: 19,28
+Event type: Monster, Event Position: 24,9
+Event type: Monster, Event Position: -6,-4
+Event type: Monster, Event Position: -7,21
+Event type: Monster, Event Position: -14,14
+Event type: Treasure, Event Position: -27,19
+Event type: Monster, Event Position: -22,-27
+Event type: Monster, Event Position: 3,-1
+Event type: Monster, Event Position: 21,22
+Event type: Monster, Event Position: -19,6
+Event type: Special, Event Position: 0,9

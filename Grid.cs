@@ -25,7 +25,9 @@ namespace Barrenmoor
             {
                 events.Add(item.ToString());
             }
-            System.IO.File.WriteAllLines("C:\\Users\\ashbe\\Desktop\\eventList.txt", events);
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string path = basePath + "\\..\\..\\eventList.txt";
+            System.IO.File.WriteAllLines(path, events);
         }
 
         private Point GenerateEvent()
