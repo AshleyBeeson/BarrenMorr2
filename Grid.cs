@@ -58,6 +58,9 @@ namespace Barrenmoor
 
         public Point CheckPlayerPos(Position pos)
         {
+
+            Compass.GetDistance(pos, EventPoints[EventPoints.Count-1]);
+
             foreach (var Point in EventPoints)
             {
                 var PointPos = Point.pos;

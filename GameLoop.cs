@@ -19,13 +19,12 @@ namespace Barrenmoor
 
             while (isPlaying)
             {
+                //Display how far the player is from the goal
+                Console.WriteLine("The Compass Says: " + Compass.Dist + "m");
+
                 //Get player movement and move them
                 var move = GetMovement();
                 player.MovePlayer(move);
-
-                //Display how far the player is from the goal
-
-
 
                 //Check if Event Exists at the players position
                 Point Event = grid.CheckPlayerPos(player.pos);
