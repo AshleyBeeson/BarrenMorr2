@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Map1
+namespace Barrenmoor
 {
     class MapClass
     {

@@ -31,7 +31,12 @@ namespace Barrenmoor
             treasureY = y;
         }
 
-
+        public void RandomTreasurePosition()
+        {
+            Random rnd = new Random();
+            treasureX = rnd.Next(-5, 5);
+            treasureY = rnd.Next(-5, 5);
+        }
     
     }
 }
