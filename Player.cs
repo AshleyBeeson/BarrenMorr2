@@ -10,6 +10,12 @@ namespace Barrenmoor
     {
         private int playerX, playerY;
 
+        public Player()
+        {
+            playerX = 0;
+            playerY = 0;
+        }
+
         public int GetX()
         {
             return playerX;
@@ -33,21 +39,23 @@ namespace Barrenmoor
 
         public void MovePosition (string movement)
         {
-            if (movement.Equals("North") || movement.Equals("N"))
+            movement = movement.ToLower();
+
+            if (movement.Equals("north") || movement.Equals("n"))
             {
                 playerY++;
             }
-            if (movement.Equals("South") || movement.Equals("S"))
+            else if(movement.Equals("south") || movement.Equals("s"))
             {
                 playerY--;
             }
-            if (movement.Equals("East") || movement.Equals("E"))
+            else if(movement.Equals("east") || movement.Equals("e"))
             {
                 playerX++;
             }
-            if (movement.Equals("West") || movement.Equals("W"))
+            else if(movement.Equals("west") || movement.Equals("w"))
             {
-                playerY--;
+                playerX--;
             }
             else Console.WriteLine("Invalid input, please input a valid input");
 
