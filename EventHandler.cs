@@ -9,12 +9,14 @@ namespace Barrenmoor
     class EventHandler
     {
         private ItemDataBase itemDataBase;
+        private MonsterDB monsterDB;
         private static readonly Random rand = new Random();
         
 
         public EventHandler()
         {
             itemDataBase = new ItemDataBase();
+            monsterDB = new MonsterDB();
         }
 
         public void Handle(Point point, Player player)
@@ -96,7 +98,7 @@ namespace Barrenmoor
         {
             //TODO: Buld Monster DB
             //Get Monster from DB
-            var m = new NPC("Troll", 100, 5, 3);
+            var m = monsterDB.GetMonsterByIndex(rand.Next(monsterDB.size));
             //Tell player what they are fighting 
             Console.WriteLine(string.Format("Ahh it's a {0}", m.Name));
             //Fight Loop

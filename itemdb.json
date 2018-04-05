@@ -3,15 +3,23 @@
 
 		{
 			"name":"Rusty Sword",
-			"context":"1"
+			"context": 1,
+			"type":"Offensive"
 		},
 		{
 			"name":"Rusty Shield",
-			"context":"1"
+			"context": 1,
+			"type":"Defensive"
 		},
 		{
 			"name":"Crown",
-			"context":""
+			"context":"",
+			"type":"Other"
+		},
+		{
+			"name":"Steel Sword",
+			"context": 5,
+			"type":"Offensive"
 		}
 
 	]

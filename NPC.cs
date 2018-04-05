@@ -1,4 +1,6 @@
-﻿namespace Barrenmoor
+﻿using Newtonsoft.Json;
+
+namespace Barrenmoor
 {
     public class NPC
     {
@@ -12,12 +14,13 @@
             Health = 100;
         }
 
-        public NPC(string name, int health, int att, int def)
+        [JsonConstructor]
+        public NPC(string name, int health, int attack, int defense)
         {
             Name = name;
             Health = health;
-            attack = att;
-            defense = def;
+            this.attack = attack;
+            this.defense = defense;
         }
 
         public string Name { get; }

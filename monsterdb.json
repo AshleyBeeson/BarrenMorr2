@@ -1,0 +1,16 @@
+{
+	"monsters":[
+	{
+		"name":"Troll",
+		"health":100,
+		"attack":10,
+		"defense":10
+},
+{
+		"name":"Goblin",
+		"health":50,
+		"attack":3,
+		"defense":3
+}
+	]
+}
