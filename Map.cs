@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace Map1
 {
-    class Program
+    class MapClass
     {
-        static void Main(string[] args)
+        //COORDINATES OF PLAYER AND TREASURE
+        int PlayerX, PlayerY, TreasureX, TreasureY;
+
+        //RETURNS THE DISTANCE BETWEEN THE PLAYER AND THE TREASURE
+        public double TreasureDist(int PlayerParamX, int PlayerParamY, int TreasureParamX, int TreasureParamY)
         {
-            MapClass test = new MapClass();
-            Console.WriteLine(test.TreasureDist(1, 1, 0, 0));
+            return Math.Round(Math.Sqrt((PlayerParamX - TreasureParamX) * (PlayerParamX - TreasureParamX) + (PlayerParamY - TreasureParamY) * (PlayerParamY - TreasureParamY)),2);
         }
     }
 }
