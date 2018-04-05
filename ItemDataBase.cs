@@ -12,6 +12,7 @@ namespace Barrenmoor
     {
 
         private List<Item> items = new List<Item>();
+        public int size;
 
         public ItemDataBase()
         {
@@ -27,7 +28,9 @@ namespace Barrenmoor
                 Item item = i.ToObject<Item>();
                 items.Add(item);
             }
-            
+
+            size = items.Count();
+
         }
 
         public Item GetItemByIndex(int index)

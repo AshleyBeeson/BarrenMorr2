@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="CombatLoop.cs" />
     <Compile Include="Compass.cs" />
+    <Compile Include="EquipmentType.cs" />
     <Compile Include="EventHandler.cs" />
     <Compile Include="EventType.cs" />
     <Compile Include="FlavourText.cs" />

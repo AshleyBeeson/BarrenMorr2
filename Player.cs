@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Barrenmoor
 {
@@ -9,10 +10,15 @@ namespace Barrenmoor
 
         public Player(string name, Position position) : base(name, position)
         {
+            attack = 10;
+            defense = 10;
         }
 
         public void MovePlayer(string dir)
         {
+
+            CalcAttributes();
+
             switch (dir.ToUpper())
             {
                 case "MOVE":
@@ -38,6 +44,30 @@ namespace Barrenmoor
             }
         }
 
-
+        private void CalcAttributes()
+        {
+            foreach (var item in inventory)
+            {
+                if (!item.isUsed)
+                {
+                    switch (item.type)
+                    {
+                        case EquipmentType.Offensive:
+                            attack += item.ContextVal;
+                            break;
+                        case EquipmentType.Defensive:
+                            defense += item.ContextVal;
+                            break;
+                        case EquipmentType.Other:
+                            attack += item.ContextVal;
+                            defense += item.ContextVal;
+                            break;
+                        default:
+                            break;
+                    }
+                    item.isUsed = true;
+                }
+            }
+        }
     }
 }

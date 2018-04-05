@@ -10,7 +10,7 @@ namespace Barrenmoor
         public void Loop()
         {
             bool isPlaying = true;
-            int maxSizeOfGrid = 30;
+            int maxSizeOfGrid = 18;
             int maxAmtOfEvents = 15;
             Grid grid = new Grid(maxSizeOfGrid, maxAmtOfEvents);
             FlavourText.IntroText();

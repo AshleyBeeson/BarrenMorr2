@@ -23,19 +23,8 @@ namespace Barrenmoor
             float opp = specialX - playerX;
             float adj = specialY - playerY;
 
-            Dist = opp / adj;
+            Dist = (float)(Math.Pow(opp,2) + Math.Pow(adj,2));
 
-            if (Dist == 0)
-            {
-                if (playerX != specialX)
-                {
-                    Dist = playerX - specialX;
-                }
-                if (playerY != specialY)
-                {
-                    Dist = playerY - specialY;
-                }
-            }
             //Console.WriteLine(string.Format("opp: {0}, adj: {1}, Dist: {2}", opp, adj, Dist));
 
         }
