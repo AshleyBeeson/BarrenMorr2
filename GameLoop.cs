@@ -19,6 +19,13 @@ namespace Barrenmoor
 
             while (isPlaying)
             {
+                //Get player movement and move them
+                var move = GetMovement();
+                player.MovePlayer(move);
+
+                //Display how far the player is from the goal
+
+
 
                 //Check if Event Exists at the players position
                 Point Event = grid.CheckPlayerPos(player.pos);
@@ -29,13 +36,7 @@ namespace Barrenmoor
                 //Display Player pos
                 Console.WriteLine(string.Format("Current Pos: {0},{1}", player.pos.X, player.pos.Y));
 
-                //Get player movement and move them
-                var move = GetMovement();
-                player.MovePlayer(move);
-
-                //Display how far the player is from the goal
-
-
+                
                 //Check for game to be completed
                 if (player.hasCrown)
                 {

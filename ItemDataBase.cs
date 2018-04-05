@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +16,19 @@ namespace Barrenmoor
         public ItemDataBase()
         {
             //Load items from JSON
-            items.Add(new Item("Rusty sword", 1));
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string path = basePath +  "\\..\\..\\itemdb.json";
+            string jsonBody = System.IO.File.ReadAllText(path);
+            var json = JObject.Parse(jsonBody);
+            var itemlist = json.GetValue("items");
+            var extractedItems = itemlist.Children();
+            foreach (var i in extractedItems)
+            {
+                Item item = i.ToObject<Item>();
+                items.Add(item);
+            }
+            
         }
-
 
         public Item GetItemByIndex(int index)
         {

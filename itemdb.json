@@ -1,0 +1,18 @@
+{
+	"items":[
+
+		{
+			"name":"Rusty Sword",
+			"context":"1"
+		},
+		{
+			"name":"Rusty Shield",
+			"context":"1"
+		},
+		{
+			"name":"Crown",
+			"context":""
+		}
+
+	]
+}

@@ -14,7 +14,14 @@ namespace Barrenmoor
         public void MovePlayer(string dir)
         {
             switch (dir.ToUpper())
-            {   
+            {
+                case "MOVE":
+                    System.Console.WriteLine("Enter Coords: ");
+                    string coords = System.Console.ReadLine();
+                    var splitCoords = coords.Split(',');
+                    pos.X = int.Parse(splitCoords[0]);
+                    pos.Y = int.Parse(splitCoords[1]);
+                    break;
                 case "N":
                     pos.Y += 1;
                     break;

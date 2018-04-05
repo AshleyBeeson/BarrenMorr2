@@ -21,7 +21,7 @@ namespace Barrenmoor
 
         public static void EndGameText(Player player)
         {
-            var EndGame = "Game Over";
+            var EndGame = "You beat the big bad and saved the world\nGo you!";
             Console.WriteLine(EndGame);
         }
 

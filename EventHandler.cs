@@ -54,9 +54,9 @@ namespace Barrenmoor
                 Environment.Exit(0);
             }
             player.inventory.Add(item);
-            
-            //Fight Boss
 
+            //Fight Boss
+            Console.WriteLine("You should fight the big bad here but I've not built it yet so....");
 
             //Success
             player.hasCrown = true;
