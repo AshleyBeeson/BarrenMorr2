@@ -17,6 +17,7 @@ namespace Barrenmoor
             {
                 EventPoints.Add(GenerateEvent());    
             }
+            EventPoints.Add(new Point(new Position(rand.Next(maxSizeOfGrid), rand.Next(maxSizeOfGrid)), EventType.Special));
             List<string> events = new List<string>();
             foreach (var item in EventPoints)
             {
@@ -32,18 +33,18 @@ namespace Barrenmoor
             Position pos = new Position(x,y);
             EventType e;
         
-            switch (rand.Next(3))
+            switch (rand.Next(4))
             {
                 default:
                     e = EventType.Monster;
                     break;
-                case 1:
+                case 0:
                     e = EventType.Monster;
                     break;
-                case 2:
+                case 1:
                     e = EventType.Treasure;
                     break;
-                case 3:
+                case 2:
                     e = EventType.Trap;
                     break;
             }

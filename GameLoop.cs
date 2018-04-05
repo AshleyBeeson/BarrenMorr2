@@ -5,11 +5,15 @@ namespace Barrenmoor
     public class GameLoop
     {
 
+        private EventHandler eventHandler = new EventHandler();
+
         public void Loop()
         {
             bool isPlaying = true;
             bool hasCrown = false;
-            Grid grid = new Grid(30, 10);
+            int maxSizeOfGrid = 30;
+            int maxAmtOfEvents = 15;
+            Grid grid = new Grid(maxSizeOfGrid, maxAmtOfEvents);
             FlavourText.IntroText();
             Player player = new Player(GetPlayerName(), new Position(0,0));
             FlavourText.QuestText(player);
@@ -21,7 +25,7 @@ namespace Barrenmoor
                 Point Event = grid.CheckPlayerPos(player.pos);
 
                 //Run the Event if Exists
-                RunEvent(Event);
+                eventHandler.Handle(Event,player);
 
                 //Display Player pos
                 Console.WriteLine(string.Format("Current Pos: {0},{1}", player.pos.X, player.pos.Y));
@@ -44,19 +48,7 @@ namespace Barrenmoor
             Console.Read();
         }
 
-        private void RunEvent(Point p)
-        {
-            if (p != null)
-            {
-                Console.WriteLine(string.Format("EVENT TYPE: {0}", p.type));
-            }
-            else
-            {
-                FlavourText.NothingFoundText();
-            }
-                
-        }
-
+       
         private string GetPlayerName()
         {
             FlavourText.WelcomeText();

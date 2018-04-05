@@ -43,10 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compass.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="EventHandler.cs" />
     <Compile Include="EventType.cs" />
     <Compile Include="FlavourText.cs" />
     <Compile Include="GameLoop.cs" />
     <Compile Include="Grid.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="NPC.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Point.cs" />

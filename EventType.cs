@@ -2,6 +2,6 @@
 {
     public enum EventType
     {
-        Monster,Treasure,Trap
+        Monster,Treasure,Trap,Special
     }
 }
