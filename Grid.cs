@@ -18,6 +18,8 @@ namespace Barrenmoor
                 EventPoints.Add(GenerateEvent());    
             }
             EventPoints.Add(new Point(new Position(rand.Next(maxSizeOfGrid), rand.Next(maxSizeOfGrid)), EventType.Special));
+
+
             List<string> events = new List<string>();
             foreach (var item in EventPoints)
             {
@@ -28,8 +30,8 @@ namespace Barrenmoor
 
         private Point GenerateEvent()
         {
-            int x = rand.Next(maxSize);
-            int y = rand.Next(maxSize);
+            int x = rand.Next(-maxSize,maxSize);
+            int y = rand.Next(-maxSize, maxSize);
             Position pos = new Position(x,y);
             EventType e;
         

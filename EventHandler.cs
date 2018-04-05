@@ -32,6 +32,7 @@ namespace Barrenmoor
                       TreasureEventBuilder(player);
                         break;
                     case EventType.Special:
+                        SpecialEventBuilder(player);
                         break;
                 }
                 
@@ -42,11 +43,29 @@ namespace Barrenmoor
             }
         }
 
+        private void SpecialEventBuilder(Player player)
+        {
+            //Get crown
+            Item item = itemDataBase.GetItemByName("Crown");
+            if (item == null)
+            {
+                Console.WriteLine("Error couldn't find the crown in DB");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+            player.inventory.Add(item);
+            
+            //Fight Boss
+
+
+            //Success
+            player.hasCrown = true;
+        }
 
         private void TreasureEventBuilder(Player player)
         {
             //Get Item from DB
-            Item item = itemDataBase.GetItem(0);
+            Item item = itemDataBase.GetItemByIndex(0);
             //Tell the player what they got
             Console.WriteLine(string.Format("You found {0}" , item.Name));
             //Add item to players inventory

@@ -1,7 +1,12 @@
-﻿namespace Barrenmoor
+﻿using System.Collections.Generic;
+
+namespace Barrenmoor
 {
     public class Player : NPC
     {
+        public List<Item> inventory = new List<Item>();
+        internal bool hasCrown;
+
         public Player(string name, Position position) : base(name, position)
         {
         }

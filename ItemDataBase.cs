@@ -18,10 +18,21 @@ namespace Barrenmoor
         }
 
 
-        public Item GetItem(int index)
+        public Item GetItemByIndex(int index)
         {
-            throw new NotImplementedException();
+            return items[index];
         }
 
+        internal Item GetItemByName(string itemName)
+        {
+            foreach (var item in items)
+            {
+                if (item.Name == itemName)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
     }
 }

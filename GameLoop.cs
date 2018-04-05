@@ -10,7 +10,6 @@ namespace Barrenmoor
         public void Loop()
         {
             bool isPlaying = true;
-            bool hasCrown = false;
             int maxSizeOfGrid = 30;
             int maxAmtOfEvents = 15;
             Grid grid = new Grid(maxSizeOfGrid, maxAmtOfEvents);
@@ -38,7 +37,7 @@ namespace Barrenmoor
 
 
                 //Check for game to be completed
-                if (hasCrown)
+                if (player.hasCrown)
                 {
                     isPlaying = false;
                 }
