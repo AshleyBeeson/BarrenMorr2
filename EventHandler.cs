@@ -18,7 +18,7 @@ namespace Barrenmoor
 
         public void Handle(Point point, Player player)
         {
-            Event eve = null;
+            
             if (point != null)
             {
                 Console.WriteLine(string.Format("EVENT TYPE: {0}", point.type));
@@ -29,12 +29,12 @@ namespace Barrenmoor
                     case EventType.Trap:
                         break;
                     case EventType.Treasure:
-                      eve = TreasureEventBuilder();
+                      TreasureEventBuilder(player);
                         break;
                     case EventType.Special:
                         break;
                 }
-                RunEvent(eve);
+                
             }
             else
             {
@@ -42,21 +42,15 @@ namespace Barrenmoor
             }
         }
 
-        private void RunEvent(Event e)
-        {
-            if (e != null)
-            {
-                Console.WriteLine(e.Desc);
 
-            }
-        }
-
-        private Event TreasureEventBuilder()
+        private void TreasureEventBuilder(Player player)
         {
-            Event e = new Event();
-            e.Desc = "You found some treasure";
-            e.items.Add(itemDataBase.GetItem(0));
-            return e;
+            //Get Item from DB
+            Item item = itemDataBase.GetItem(0);
+            //Tell the player what they got
+            Console.WriteLine(string.Format("You found {0}" , item.Name));
+            //Add item to players inventory
+            player.inventory.Add(item);
         }
 
         private void TrapEventBuilder()
@@ -64,9 +58,14 @@ namespace Barrenmoor
             throw new NotImplementedException();
         }
 
-        private void MonsterEventBuilder()
+        private void MonsterEventBuilder(Player player)
         {
-            throw new NotImplementedException();
+            //Get Monster from DB
+            var m = new NPC("Troll", 100);
+            //Tell player what they are fighting 
+            Console.WriteLine(string.Format("Ahh it's a {0}", m.Name));
+            //Fight Loop
+            CombatLoop.Fight(m, player);
         }
 
     }

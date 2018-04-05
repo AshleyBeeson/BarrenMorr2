@@ -2,8 +2,8 @@
 {
     public class Item
     {
-        private string Name { get; set; }
-        private int ContextVal { get; set; }
+        public string Name { get; set; }
+        public int ContextVal { get; set; }
 
         public Item(string name, int val)
         {

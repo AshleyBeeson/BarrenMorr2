@@ -2,11 +2,18 @@
 {
     public class NPC
     {
+        
         public NPC(string name, Position position)
         {
             Name = name;
             pos = position;
             Health = 100;
+        }
+
+        public NPC(string name, int health)
+        {
+            Name = name;
+            Health = health;
         }
 
         public string Name { get; }

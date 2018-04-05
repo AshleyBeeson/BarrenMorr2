@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Barrenmoor
 {
-    class Event
+    class CombatLoop
     {
 
-        public string Desc { get; set; }
-        public List<Item> items = new List<Item>();
-        public NPC monster { get; set; }
+        public static void Fight(NPC monster, Player player)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }
