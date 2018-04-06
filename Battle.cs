@@ -11,14 +11,11 @@ namespace Barrenmoor
         //Add level scaling
         //Add level proportional to treasure and battles
         //Add monster flavour text
-        int playerHp = 10;   //Player.GetHp();
-        int playerAtk = 5;    //Player.GetAtk();
-        int playerLvl = 1;  //Player.GetLvl();
-        int monsterHp = 10; //Monster.GetHp();
-        int monsterAtk = 5; //Monster.GetAtk();
-        public bool battle(int playerHp, int playerAtk, int playerLvl)
+        public bool battle(int playerHp, int playerAtk, int x, int y)
         {
             //new battle flavour text
+            Random rnd = new Random();
+            int monsterHp = 10 + rnd.Next(-10,x+y), monsterAtk = 5 + rnd.Next(-5,x+y);
             Console.WriteLine("Player Health: " + playerHp);
             Console.WriteLine("Player Attack: " + playerAtk);
             Console.WriteLine("Monster Health: " + monsterHp);
