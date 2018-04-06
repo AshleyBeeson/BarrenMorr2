@@ -19,8 +19,14 @@ namespace Barrenmoor
 
             while (isPlaying)
             {
+                //Calculate any updates to the players stats
+                player.CalcAttributes();
+
                 //Display how far the player is from the goal
                 Console.WriteLine("The Compass Says: " + Compass.Dist + "m");
+
+                //Allow the player a chance to see their stats
+                player.SeeStats();
 
                 //Get player movement and move them
                 var move = GetMovement();

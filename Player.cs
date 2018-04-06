@@ -12,12 +12,13 @@ namespace Barrenmoor
         {
             attack = 10;
             defense = 10;
+            CalcAttributes();
         }
 
         public void MovePlayer(string dir)
         {
 
-            CalcAttributes();
+            
 
             switch (dir.ToUpper())
             {
@@ -44,7 +45,12 @@ namespace Barrenmoor
             }
         }
 
-        private void CalcAttributes()
+        internal void SeeStats()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CalcAttributes()
         {
             foreach (var item in inventory)
             {

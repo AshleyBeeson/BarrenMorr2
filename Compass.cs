@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Barrenmoor
 {
+    //TODO: ADD a 'second' dial to point to the closest event 
     class Compass
     {
 

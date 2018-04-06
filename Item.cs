@@ -8,10 +8,10 @@
 
         public bool isUsed;
 
-        public Item(string name, int val, EquipmentType type)
+        public Item(string name, int context, EquipmentType type)
         {
             Name = name;
-            ContextVal = val;
+            ContextVal = context;
             this.type = type;
         }
     }

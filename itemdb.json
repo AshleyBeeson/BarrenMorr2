@@ -13,13 +13,38 @@
 		},
 		{
 			"name":"Crown",
-			"context":"",
+			"context":0,
 			"type":"Other"
 		},
 		{
 			"name":"Steel Sword",
 			"context": 5,
 			"type":"Offensive"
+		},
+		{
+			"name":"Silver Sword",
+			"context": 10,
+			"type":"Offensive"
+		},
+		{
+			"name":"Steel Shield",
+			"context": 5,
+			"type":"Defensive"
+		},
+		{
+			"name":"Silver Shield",
+			"context": 10,
+			"type":"Defensive"
+		},
+		{
+			"name":"Steel Armour",
+			"context": 10,
+			"type":"Defensive"
+		},
+		{
+			"name":"Leather Armour",
+			"context": 5,
+			"type":"Defensive"
 		}
 
 	]
