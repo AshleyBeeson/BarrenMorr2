@@ -13,6 +13,8 @@ namespace Barrenmoor
             Player player = new Player();
             MapClass map = new MapClass();
             Treasure treasure = new Treasure();
+            Battle btl = new Battle();
+            Random rnd = new Random();
             treasure.RandomTreasurePosition();
             bool isDead = false;
 
@@ -27,16 +29,30 @@ namespace Barrenmoor
                 string move = Console.ReadLine();
                 player.MovePosition(move);
                 double dist = map.TreasureDist(player.GetX(), player.GetY(), treasure.GetX(), treasure.GetY());
+                Console.WriteLine("-------------------------------");
                 Console.WriteLine("You are " + dist + " away bro");
+                Console.WriteLine("-------------------------------");
 
-                if ( dist == 0)
+                if (dist == 0)
                 {
                     treasure.RandomTreasurePosition();
-                    treasure.DetermineTreasureLevel();
-                    points = points + treasure.GetTreasurePoints();
+                    points = points + treasure.DetermineTreasureLevel();
+                    player.SetHP(player.GetHP() + points);
+                    player.SetAtk(player.GetAtk() + points);
                     Console.WriteLine("You have " + points + "points");
                 }
-
+                else
+                {
+                    if (rnd.Next(0, 4) == 3)
+                    {
+                        isDead = btl.battle(player.GetHP(), player.GetAtk(), player.GetX(), player.GetY());
+                        if (isDead == true)
+                        {
+                            Console.WriteLine("You struggle to breathe your last... cold... breath... but fail.");
+                            Console.ReadLine();
+                        }
+                    }
+                }
                 if (points >= 50) treasurePointsMet = true;
 
                 if (treasurePointsMet)
