@@ -38,5 +38,17 @@ namespace Barrenmoor
             return monsters[index];
         }
 
+        internal NPC GetMonsterByName(string monsterName)
+        {
+            foreach (var monster in monsters)
+            {
+                if (monster.Name == monsterName)
+                {
+                    return monster;
+                }
+            }
+            return null;
+        }
+
     }
 }

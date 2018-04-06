@@ -22,13 +22,14 @@ namespace Barrenmoor
         public void Handle(Point point, Player player)
         {
             
-            if (point != null)
+            if (point != null && !point.isUsed)
             {
+                point.isUsed = true;
                 Console.WriteLine(string.Format("EVENT TYPE: {0}", point.type));
                 switch (point.type)
                 {
                     case EventType.Monster:
-                        MonsterEventBuilder(player);
+                        MonsterEventBuilder(player); 
                         break;
                     case EventType.Trap:
                         TrapEventBuilder(player);
@@ -61,7 +62,7 @@ namespace Barrenmoor
             player.inventory.Add(item);
 
             //Create big bad
-            NPC BigBad = new NPC("Big Bad", 500, 30, 15);
+            NPC BigBad = monsterDB.GetMonsterByName("Big Bad");
 
             //Fight Boss
             CombatLoop.Fight(BigBad, player);
@@ -96,9 +97,18 @@ namespace Barrenmoor
 
         private void MonsterEventBuilder(Player player)
         {
-            //TODO: Buld Monster DB
             //Get Monster from DB
-            var m = monsterDB.GetMonsterByIndex(rand.Next(monsterDB.size));
+
+            NPC m = null;
+            while (m == null)
+            {
+                m = monsterDB.GetMonsterByIndex(rand.Next(monsterDB.size));
+                if (m.Name.Equals("Big Bad"))
+                {
+                    m = null;
+                }
+            }
+
             //Tell player what they are fighting 
             Console.WriteLine(string.Format("Ahh it's a {0}", m.Name));
             //Fight Loop

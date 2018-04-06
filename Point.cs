@@ -6,6 +6,8 @@
         
         public EventType type { get; }
 
+        public bool isUsed { get; set; }
+
         public Point(Position pos, EventType type)
         {
             this.pos = pos;

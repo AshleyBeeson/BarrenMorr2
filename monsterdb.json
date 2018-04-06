@@ -61,6 +61,24 @@
 		},
 		{
 			"name": "Sandy Man",
+			"health": 1000,
+			"attack": 1000,
+			"defense": 1000
+		},
+		{
+			"name": "Big Bad",
+			"health": 300,
+			"attack": 40,
+			"defense": 30
+		},
+		{
+			"name": "Bilal",
+			"health": 1,
+			"attack": 1,
+			"defense": 1
+		},
+		{
+			"name": "Byelal",
 			"health": 1,
 			"attack": 1,
 			"defense": 1

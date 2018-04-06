@@ -40,7 +40,7 @@ namespace Barrenmoor
 
             foreach (var point in eventPoints)
             {
-                if (point.type == EventType.Special)
+                if (point.type == EventType.Special || point.isUsed)
                 {
                     continue;
                 }

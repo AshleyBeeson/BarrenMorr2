@@ -37,8 +37,20 @@ namespace Barrenmoor
                 }
                Thread.Sleep(combatTime);
                Console.WriteLine("The Struggle Continues...");
-               monster.Health -= (player.attack - monster.defense);
-               player.Health -= (monster.attack - player.defense);
+                int playerDamage = player.attack - monster.defense;
+                int monsterDamage = monster.attack - player.defense;
+
+                if (playerDamage < 0)
+                {
+                    playerDamage = 0;
+                }
+                if (monsterDamage < 0)
+                {
+                    monsterDamage = 0;
+                }
+
+                monster.Health -= playerDamage;
+               player.Health -= monsterDamage;
                
          
 
