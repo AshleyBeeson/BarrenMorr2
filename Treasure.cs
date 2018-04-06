@@ -18,7 +18,7 @@ namespace Barrenmoor
 
         }
 
-        public void DetermineTreasureLevel()
+        public int DetermineTreasureLevel()
         {
             Random rnd = new Random();
             treasureLevel = treasureX = rnd.Next(1, 3);
@@ -26,6 +26,7 @@ namespace Barrenmoor
             if (treasureLevel == 1)
             {
                 points = 5;
+                
             }
             else if ( treasureLevel == 2)
             {
@@ -35,6 +36,7 @@ namespace Barrenmoor
             {
                 points = 15;
             }
+            return points;
         }
 
         public int GetTreasurePoints()
