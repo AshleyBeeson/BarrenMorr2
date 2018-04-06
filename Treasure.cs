@@ -26,6 +26,7 @@ namespace Barrenmoor
             if (treasureLevel == 1)
             {
                 points = 5;
+
             }
             else if ( treasureLevel == 2)
             {
