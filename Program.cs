@@ -17,8 +17,8 @@ namespace Barrenmoor
             bool isDead = false;
 
             int points = 0;
-            bool treasurePointsMet = false; 
-
+            bool treasurePointsMet = false;
+            player.IntroTxt(); 
 
             while ( (isDead==false) && (treasurePointsMet == false) )
             {
@@ -37,7 +37,7 @@ namespace Barrenmoor
                     Console.WriteLine("You have " + points + "points");
                 }
 
-                if (points >= 10) treasurePointsMet = true;
+                if (points >= 50) treasurePointsMet = true;
 
                 if (treasurePointsMet)
                 {
