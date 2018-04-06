@@ -41,6 +41,7 @@ namespace Barrenmoor
 
                 if (treasurePointsMet)
                 {
+                    player.treasuretxt();
                     Console.WriteLine("Yh m8 you winz0");
                     //treasureFound = true;
                     Console.ReadLine();

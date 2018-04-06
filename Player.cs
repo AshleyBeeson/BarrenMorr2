@@ -126,6 +126,15 @@ namespace Barrenmoor
                 case 10:
                     Console.WriteLine("A swarm of insects has formed into an insect man. The insect man wants nothing but trouble and is not going to leave you alone until he is taken down.");
                     break;
+                case 11:
+                    Console.WriteLine("A wild Ya-Boilal appears. He can't see you. It seems his hair is in the way.");
+                        break;
+                case 12:
+                    Console.WriteLine("A wild druid is poisoned and therefore his healing abilities do damage. Yet he is still under the impression he is helping you.");
+                    break;
+                case 13:
+                    Console.WriteLine("A successful banker's (Tommy Wiseau) fiancee (Juliette Danielle) tempts and manipulates his best friend (Greg Sestero). Stop her.");
+                    break;
             }
         }
 
@@ -137,6 +146,14 @@ namespace Barrenmoor
             Console.WriteLine("You look in your pockets and feel something hard. lel.");
             Console.WriteLine("You realise it's not a compass but it seems to be showing you the distance to something.");
             Console.WriteLine("-------------------------------------------------------------------------------------------");
+        }
+
+        public void treasuretxt()
+        {
+          //  Console.WriteLine("You stumble upon a mountain of treasure. \"SIK LOOT MUSH\" you shout out. +1 DEF");
+            
+            Console.WriteLine("You stumble upon a mountain of treasure. \"SIK LOOT FAM\" you shout out.");
+          //  Console.WriteLine("You stumble upon a mountain of treasure. \"SIK LOOT LED\" you shout out. +1 ATK");
         }
     }
 }
