@@ -11,7 +11,7 @@ namespace Barrenmoor
         {
             bool isPlaying = true;
             int maxSizeOfGrid = 10;
-            int maxAmtOfEvents = 20;
+            int maxAmtOfEvents = 50;
             Grid grid = new Grid(maxSizeOfGrid, maxAmtOfEvents);
             FlavourText.IntroText();
             Player player = new Player(GetPlayerName(), new Position(0,0));
@@ -23,14 +23,11 @@ namespace Barrenmoor
                 player.CalcAttributes();
 
                 //Display how far the player is from the goal
-                Console.WriteLine("The Compass Says: " + Compass.Dist + "m");
+                Console.WriteLine("The Compasses main dial Says: " + Compass.Dist + "m");
+                Console.WriteLine("The Compasses second dial Says: " + Compass.NearestEvent + "m");
 
-                //Allow the player a chance to see their stats
-                player.SeeStats();
-
-                //Get player movement and move them
-                var move = GetMovement();
-                player.MovePlayer(move);
+                //Allow the player to make a choice of what they want to do
+                player.Options();
 
                 //Check if Event Exists at the players position
                 Point Event = grid.CheckPlayerPos(player.pos);
@@ -60,11 +57,7 @@ namespace Barrenmoor
             return Console.ReadLine();
         }
         
-        private string GetMovement()
-        {
-            FlavourText.MovementText();
-            return Console.ReadLine();
-        }
+        
         
     }
 }

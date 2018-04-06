@@ -45,9 +45,48 @@ namespace Barrenmoor
             }
         }
 
-        internal void SeeStats()
+        internal void Options()
         {
-            throw new NotImplementedException();
+            bool invalid = true;
+            while (invalid)
+            {
+                Console.WriteLine("What would you like to do?\n" +
+                "(V)iew Stats\n" +
+                "(M)ove");
+                string option = Console.ReadLine().ToUpper();
+
+                if (option.Equals("V"))
+                {
+                    //Allow the player a chance to see their stats
+                    displayStats();
+                    invalid = false;
+                }
+                else if (option.Equals("M"))
+                {
+                    //Get player movement and move them
+                    var move = GetMovement();
+                    MovePlayer(move);
+                    invalid = false;
+                }
+   
+            }
+            
+        }
+
+        
+
+        private void displayStats()
+        {
+            Console.WriteLine(string.Format("Name: {0}\n" +
+                "Health: {1}\n" +
+                "Attack: {2}\n" +
+                "Defense: {3}\n", Name,Health,attack,defense));
+        }
+
+        private string GetMovement()
+        {
+            FlavourText.MovementText();
+            return Console.ReadLine();
         }
 
         public void CalcAttributes()

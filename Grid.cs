@@ -60,7 +60,7 @@ namespace Barrenmoor
         {
 
             Compass.GetDistance(pos, EventPoints[EventPoints.Count-1]);
-
+            Compass.FindNearestEvent(pos,EventPoints);
             foreach (var Point in EventPoints)
             {
                 var PointPos = Point.pos;

@@ -1,64 +1,69 @@
 {
-	"monsters":[
-	{
-		"name":"Troll",
-		"health":100,
-		"attack":10,
-		"defense":10
-},
-{
-		"name":"Goblin",
-		"health":50,
-		"attack":3,
-		"defense":3
-},
-{
-		"name":"Orc",
-		"health":75,
-		"attack":5,
-		"defense":3
-},
-{
-		"name":"Giant Spider",
-		"health":50,
-		"attack":8,
-		"defense":3
-},
-{
-		"name":"Robber",
-		"health":50,
-		"attack":2,
-		"defense":2
-},
-{
-		"name":"Pack of Wolves",
-		"health":100,
-		"attack":5,
-		"defense":5
-},
-{
-		"name":"Dragon",
-		"health":500,
-		"attack":30,
-		"defense":30
-},
-{
-		"name":"Necromancer",
-		"health":25,
-		"attack":30,
-		"defense":10
-},
-{
-		"name":"Skeleton",
-		"health":10,
-		"attack":5,
-		"defense":3
-},
-{
-		"name":"Zombie",
-		"health":50,
-		"attack":1,
-		"defense":1
-}
+	"monsters": [{
+			"name": "Troll",
+			"health": 100,
+			"attack": 10,
+			"defense": 10
+		},
+		{
+			"name": "Goblin",
+			"health": 50,
+			"attack": 3,
+			"defense": 3
+		},
+		{
+			"name": "Orc",
+			"health": 75,
+			"attack": 5,
+			"defense": 3
+		},
+		{
+			"name": "Giant Spider",
+			"health": 50,
+			"attack": 8,
+			"defense": 3
+		},
+		{
+			"name": "Robber",
+			"health": 50,
+			"attack": 2,
+			"defense": 2
+		},
+		{
+			"name": "Pack of Wolves",
+			"health": 100,
+			"attack": 5,
+			"defense": 5
+		},
+		{
+			"name": "Dragon",
+			"health": 500,
+			"attack": 300,
+			"defense": 300
+		},
+		{
+			"name": "Necromancer",
+			"health": 25,
+			"attack": 30,
+			"defense": 10
+		},
+		{
+			"name": "Skeleton",
+			"health": 10,
+			"attack": 5,
+			"defense": 3
+		},
+		{
+			"name": "Zombie",
+			"health": 50,
+			"attack": 1,
+			"defense": 1
+		},
+		{
+			"name": "Sandy Man",
+			"health": 1,
+			"attack": 1,
+			"defense": 1
+		}
 	]
 }
